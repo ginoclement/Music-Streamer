@@ -1,0 +1,13 @@
+Some userful glyphicons
+http://getbootstrap.com/components/?#glyphicons
+	step-backward
+	step-forward
+	play
+	pause
+	stop
+	list
+	volume-off
+	volume-down
+	volume-up
+	music
+	film

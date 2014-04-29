@@ -13,7 +13,7 @@
 	};
 
 	function songClick(event){
-		var playdiv = document.getElementById("playdiv");
+		var playdiv = document.getElementById("player");
 		playdiv.innerHTML = '<audio controls autoplay><source src="' + event.target.innerHTML + '" type="audio/mpeg"></audio>';
 	}
 

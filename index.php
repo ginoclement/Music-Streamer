@@ -4,11 +4,13 @@
 		<!--
 		Gino Clement
 		Created: 4/27/2014
+		Last Modified: 4/28/2014
 
 		NOTES:
-			Not currently using the subnet mask except for in debug
-			
-			Will display debug information if the GET parameter "debug" is set
+			-Not currently using the subnet mask except for in debug
+			-Will display debug information if the GET parameter "debug" is set
+			-Need to switch the play button glyphicon on pause and vice versa
+			-Clicking a nav bar link doesn't select it
 		-->
 		<?php
 
@@ -71,7 +73,7 @@
 			}
 			*/
 
-				//Scans a given directory, calls import for files, and recursively searches directories
+				//Scans a given directory, prints files, and recursively searches directories
 				function scan_dir($dir){
 					//Get files in the directory
 					$files = scandir($dir);
@@ -91,35 +93,99 @@
 					}
 				}
 
-				function printsong($path){ ?>
-					<dd><?= $path ?></dd>
-					<!-- <p><iframe src="<?= $path ?>"></iframe></p> -->
-				<?php }
+				function printsong($path){
+					?>
+						<dd><?= $path ?></dd>
+					<?php
+				}
 
 		?>
 		<title>Streamer</title>
 		<meta charset="utf-8" />
-		<script src="video-js/video.js" type="text/javascript"></script>
-		<script src="index.js" type="text/javascript"></script>
-		<link href="index.css" rel="stylesheet" type="text/css">
+		<!-- Scripts 
+			Note: 
+				jQuery has to be imported before Boostrap and player.js
+		-->
+		<script src="js/video.js" type="text/javascript"></script>
+		<!-- <script src="js/index.js" type="text/javascript"></script> -->
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript"></script> 
+		<script src="js/player.js" type="text/javascript"></script>
+		<!-- CSS -->
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/index.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<div id="filelist">
+		<!-- Begin the fixed navigation bar at top -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+			            <span class="icon-bar"></span>
+          			</button>
+					<a class="navbar-brand" href="#">Streamer</a>
+				</div>
+				<div class="navbar-collapse collapse">
+					<!-- Navigation bar left -->
+		            <ul class="nav navbar-nav">
+		            	<li class="active"><a href="#">Playlists</a></li>
+						<li><a href="#Artists">Artists</a></li>
+	                	<li><a href="#Albums">Albums</a></li>
+	                	<li><a href="#Songs">Songs</a></li>
+	                	<li><a href="#Genres">Genres</a></li>
+			            <li class="dropdown">
+			              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+		                	<ul class="dropdown-menu">
+			            	    <li><a href="#">Action</a></li>
+			                	<li><a href="#">Another action</a></li>
+			          		    <li><a href="#">Something else here</a></li>
+			                    <li class="divider"></li>
+			                    <li class="dropdown-header">Nav header</li>
+			                  	<li><a href="#">Separated link</a></li>
+				                <li><a href="#">One more separated link</a></li>
+			                </ul>
+	 	              	</li>
+		            </ul>
+		            <!-- Navigation bar right -->
+		            <div class="nav navbar-nav navbar-right">
+		            	<!-- Add to favorites/playlist button -->
+		            	<button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star"></span></button>
+		            	<!-- Begin music control buttons -->
+		            	<div class="btn-group">
+  							<button id="previous" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-step-backward"></span></button>
+ 							<button id="play" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-play"></span></button>
+ 							<button id="pause" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-pause"></span></button>
+ 							<button id="next" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-step-forward"></span></button>
+ 							<!-- <button type="button" class="btn btn-default">Right</button> -->
+						</div>
+		            	<!-- End music control buttons -->
+		            </div>
+		        </div>
+        	</div>
+		</nav>
+		<!-- End the fixed navigation bar at top -->
+		<div id="Playlists"></div>
+		<div id="Artists"></div>
+    	<div id="player">
+    		<audio id="audioplayer" controls autoplay>
+    			<source src="" type="audio/mpeg">
+    			No song selected yet.
+    		</audio>
+    	</div>
+		<div id="filelist" class="container">
 			<a href="demo.html">Video Test</a><br />
 			<p>Server IP Address: <?= $Server_IP ?></p>
 			<p>Your IP Address: <?= $Client_IP ?></p>
-			<div id="playdiv">
-				<audio controls autoplay>
-					<source src="" type="audio/mpeg">
-				</audio>
-			</div>
 			<br />
 		<?php
 			$files = glob(directory . "*");
 
 			//Code will need to be moved to inside the IP checking
 			?>
-			<div id="filelist">
+			<div id="filelist" class="container">
 				<dt>List of files</dt>
 				<dl>
 			<?php
