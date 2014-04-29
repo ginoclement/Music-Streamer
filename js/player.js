@@ -32,9 +32,9 @@
 	function songClick(event){
 		var playdiv = document.getElementById("player");
 		playdiv.innerHTML = '<audio id="audioplayer" controls autoplay><source src="' + event.target.innerHTML + '" type="audio/mpeg"></audio>';
-		$("#audioplayer").bind("play", function(){
-			alert("Play clicked");
-		});
+		// $("#audioplayer").bind("play", function(){
+		// 	alert("Play clicked");
+		// });
 	}
 
 	function nextSong(){
