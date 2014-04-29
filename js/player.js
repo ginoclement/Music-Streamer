@@ -12,8 +12,6 @@
 		$("#pause").bind("click", pauseSong);
 		$("#play").bind("click", playSong);
 		$("#previous").bind("click", previousSong);
-		
-		
 	};
 
 	// This will change once I modify how songs are played/called
