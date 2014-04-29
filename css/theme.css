@@ -1,0 +1,28 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+#playlist {
+	width: 250px;
+	position: fixed;
+	left: -250px;
+	/*border-top: solid black 2px;*/
+	border-right: solid black 2px;
+	/*border-bottom: solid black 2px;*/
+	border-radius: 15px;
+	background-color: white;
+}
+
+
+/*	Notes
+		Right now this player is only here until the new one is finished	
+*/
+
+#player {
+	position: fixed;
+	top: 0px;
+	position: fixed;
+    right: 0px;	
+    padding-top: 50px;
+}

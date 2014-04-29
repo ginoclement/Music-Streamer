@@ -14,7 +14,7 @@
 				Appear in middle of the page?
 
 	*/
-	window.onload = function (){
+	window.addEventListener("load", function (){
 		var songs = document.getElementsByTagName("dd");
 		for (var i = 0; i < songs.length; i++) {
 			songs[i].addEventListener("click", songClick);
@@ -26,7 +26,7 @@
 		$("#pause").bind("click", pauseSong);
 		$("#play").bind("click", playSong);
 		$("#previous").bind("click", previousSong);
-	};
+	});
 
 	// This will change once I modify how songs are played/called
 	function songClick(event){

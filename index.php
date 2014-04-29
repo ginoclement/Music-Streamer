@@ -110,11 +110,12 @@
 		<script src="js/jquery-2.1.0.min.js" type="text/javascript"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript"></script> 
 		<script src="js/player.js" type="text/javascript"></script>
+		<script src="js/navigation.js" type="text/javascript"></script>
 		<!-- CSS -->
 		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-		<link href="css/index.css" rel="stylesheet" type="text/css">
+		<link href="css/theme.css" rel="stylesheet" type="text/css">
 	</head>
-	<body>
+	<body role="document">
 		<!-- Begin the fixed navigation bar at top -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
@@ -130,11 +131,12 @@
 				<div class="navbar-collapse collapse">
 					<!-- Navigation bar left -->
 		            <ul class="nav navbar-nav">
-		            	<li class="active"><a href="#">Playlists</a></li>
-						<li><a href="#Artists">Artists</a></li>
-	                	<li><a href="#Albums">Albums</a></li>
-	                	<li><a href="#Songs">Songs</a></li>
-	                	<li><a href="#Genres">Genres</a></li>
+		            	<li class="active"><a id="Playing" href="#Playing">Playing</a></li>
+		            	<li><a id="Playlists" href="#Playlists">Playlists</a></li>
+						<li><a id="Artists" href="#Artists">Artists</a></li>
+	                	<li><a id="Albums" href="#Albums">Albums</a></li>
+	                	<li><a id="Songs" href="#Songs">Songs</a></li>
+	                	<li><a id="Genres" href="#Genres">Genres</a></li>
 			            <li class="dropdown">
 			              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 		                	<ul class="dropdown-menu">
@@ -167,7 +169,7 @@
 		</nav>
 		<!-- End the fixed navigation bar at top -->
 		<!-- Begin main section of the page -->
-		<div class="container">
+		<div id="main" class="container">
 			<div id="Playlists">
 				<p>Playlists Section</p>
 			</div>
@@ -177,7 +179,6 @@
 	    	<div id="player">
 	    		<audio id="audioplayer" controls autoplay>
 	    			<source src="" type="audio/mpeg">
-	    			No song selected yet.
 	    		</audio>
 	    	</div>
 			<div id="filelist" class="container">
@@ -202,6 +203,18 @@
 
 			?>
 			</div>
+		</div>
+		<div id="playlist">
+			<div id="playlistoptions" class="btn-group btn-group-lg">
+				<button id="newplaylist" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
+				<button id="play" type="button" class="btn btn-default"><span class="glyphicon glyphicon-play"></span></button>
+				<button id="pause" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pause"></span></button>
+			</div>
+			<ul class="nav nav-pills">
+				<li class="active"><a href="#">Playlist 1</a></li>
+				<li><a href="#">Playlist 2</a></li>
+				<li><a href="#">Playlist 3</a></li>
+			</ul>
 		</div>
 		<!-- End main section of the page -->
 	</body>
