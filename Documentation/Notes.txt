@@ -99,6 +99,10 @@ Ideas
 	-Get artist icons from wikipedia
 		-Option to cache the images
 	-User accounts
+	-Import/export iTunes playlist
+	-Use a iTunes music folder?
+		-Use a link to a folder?
+			-Ex. ln -s ~/Music Music
 
 General Notes
 	-Took out some of the video.js files:
