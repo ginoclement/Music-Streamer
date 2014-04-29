@@ -13,7 +13,7 @@
 		<?php
 
 			//Constants
-			define("directory", "Videos/");		//Directory to use for crawling
+			define("directory", "Music");		//Directory to use for crawling
 			define("allowremote", False);		//Whether to allow IP addresses outside of the server's subnet
 
 			//Need to implement checking the IP addresses
@@ -46,14 +46,18 @@
 				</div>
 				<?php
 			}
-			/* 
-			Working on IP checking later for now just calling a function
 
-			if(!allowremote){
+			//Working on IP checking later for now just calling a function
+			// if($Client_IP != "192.168.1.1"){
+			// 	die("This page cannot be viewed remotely");
+			// }
+
+			/*
+			if($Client_IP == "192.168.1.1"){
 				//Allowing remote addresses
 
 				//Temporary IP check hack
-				$Server_IP = substr(, 0)$Server_IP
+				// $Server_IP = substr(, 0)$Server_IP
 
 				if(){
 					//On an allowed subnet
@@ -67,13 +71,49 @@
 			}
 			*/
 
+				//Scans a given directory, calls import for files, and recursively searches directories
+				function scan_dir($dir){
+					//Get files in the directory
+					$files = scandir($dir);
+
+					//Iterate over files
+					foreach ($files as $file) {
+						if($file != "." && $file != ".."){
+							$path = $dir . "/" . $file;
+							if(is_dir($path)){
+								//If it's a directory, recurse again
+								scan_dir($path);
+							} else {
+								//Otherwise it's a file
+								printsong($path);
+							}
+						}
+					}
+				}
+
+				function printsong($path){ ?>
+					<dd><?= $path ?></dd>
+					<!-- <p><iframe src="<?= $path ?>"></iframe></p> -->
+				<?php }
+
 		?>
 		<title>Streamer</title>
 		<meta charset="utf-8" />
 		<script src="video-js/video.js" type="text/javascript"></script>
+		<script src="index.js" type="text/javascript"></script>
+		<link href="index.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<div id="filelist">
+			<a href="demo.html">Video Test</a><br />
+			<p>Server IP Address: <?= $Server_IP ?></p>
+			<p>Your IP Address: <?= $Client_IP ?></p>
+			<div id="playdiv">
+				<audio controls autoplay>
+					<source src="" type="audio/mpeg">
+				</audio>
+			</div>
+			<br />
 		<?php
 			$files = glob(directory . "*");
 
@@ -83,9 +123,8 @@
 				<dt>List of files</dt>
 				<dl>
 			<?php
-			foreach($files as $file){ ?>
-				<dd><a href="#"><?= $file ?></a></dd>
-			<?php } ?>
+				scan_dir(directory);
+			?>
 				</dl>
 			</div>
 			<?php
