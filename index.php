@@ -136,6 +136,7 @@
 	                	<li><a href="#Albums">Albums</a></li>
 	                	<li><a href="#Songs">Songs</a></li>
 	                	<li><a href="#Genres">Genres</a></li>
+	                	<li><a href="#Settings">Settings</a></li>
 			            <li class="dropdown">
 			              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 		                	<ul class="dropdown-menu">

@@ -8,6 +8,8 @@
 			songs[i].addEventListener("click", songClick);
 		};
 		$("#pause").hide();								//Hide pause button by default
+
+		//Music player controls in nav bar
 		$("#next").bind("click", nextSong);				
 		$("#pause").bind("click", pauseSong);
 		$("#play").bind("click", playSong);
@@ -19,7 +21,7 @@
 		var playdiv = document.getElementById("player");
 		playdiv.innerHTML = '<audio id="audioplayer" controls autoplay><source src="' + event.target.innerHTML + '" type="audio/mpeg"></audio>';
 		$("#audioplayer").bind("play", function(){
-			alert("Hello");
+			alert("Play clicked");
 		});
 	}
 
