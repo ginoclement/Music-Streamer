@@ -107,7 +107,6 @@
 				jQuery has to be imported before Boostrap and player.js
 		-->
 		<script src="js/video.js" type="text/javascript"></script>
-		<!-- <script src="js/index.js" type="text/javascript"></script> -->
 		<script src="js/jquery-2.1.0.min.js" type="text/javascript"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript"></script> 
 		<script src="js/player.js" type="text/javascript"></script>

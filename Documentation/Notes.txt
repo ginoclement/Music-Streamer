@@ -1,3 +1,10 @@
+Gino Clement
+Created: 4/28/2014
+Last Modified: 4/28/2014
+
+This file is notes that are helping me along with the project, as well as some ideas to implement.
+
+
 Some userful glyphicons
 http://getbootstrap.com/components/?#glyphicons
 	step-backward
@@ -92,3 +99,9 @@ Ideas
 	-Get artist icons from wikipedia
 		-Option to cache the images
 	-User accounts
+
+General Notes
+	-Took out some of the video.js files:
+		video-js.less
+		video-js.swf
+			I think this adds flash support?

@@ -1,8 +1,12 @@
+/*	Notes
+		Right now this file is only here to manage the audioplayer
+	
+*/
+
 #player {
 	position: fixed;
 	top: 0px;
 	position: fixed;
     right: 0px;	
     padding-top: 50px;
-
 }
