@@ -1,13 +1,94 @@
 Some userful glyphicons
 http://getbootstrap.com/components/?#glyphicons
 	step-backward
+		previous song
 	step-forward
+		next song
 	play
-	pause
+		play/resume
+	pause	
+		pause song
 	stop
 	list
+		upcoming?
+		current playlist?
 	volume-off
 	volume-down
 	volume-up
 	music
 	film
+		video mode?
+	music
+		music mode?
+	th
+	th-list
+	cog
+		settings
+	trash
+	home
+	plus
+		add to playlist
+	heart
+		Like the song, play more often
+	ok
+		checkmark
+	remove
+		x mark
+
+Buttons
+	Toolbars
+		set role="toolbar"
+	Groups
+		btn-group
+			btn
+	Sizes
+		btn-group-lg
+		BLANK (normal)
+		btn-group-sm
+		btn-group-xs
+
+Buttons 
+
+Alerts
+	Green
+		<div class="alert alert-success">...</div>
+	Blue
+		<div class="alert alert-info">...</div>
+	Yellow
+		<div class="alert alert-warning">...</div>
+	Red
+		<div class="alert alert-danger">...</div>
+	To make alerts dismissable
+		alert-dissmissable
+			ex. <div class="alert alert-danger alert-dismissable">...</div>
+
+Progress bars
+	Can show song place/duration
+	Features
+		Striped
+			<div class="progress progress-striped">
+		Animates
+			<div class="progress progress-striped active">
+
+	Example
+		<div class="progress">
+  			<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+   				<span class="sr-only">60% Complete</span>
+  			</div>
+		</div>
+	Example with a label (can show time?)
+		<div class="progress">
+  			<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    			60%
+  			</div>
+		</div>
+
+
+Ideas
+	-Favoritism algorithm
+		-Like songs, more you like, the more often you hear them
+	-Random playlist generator
+	-Grid icon of playlists/artists/albums
+	-Get artist icons from wikipedia
+		-Option to cache the images
+	-User accounts

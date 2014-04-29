@@ -136,7 +136,6 @@
 	                	<li><a href="#Albums">Albums</a></li>
 	                	<li><a href="#Songs">Songs</a></li>
 	                	<li><a href="#Genres">Genres</a></li>
-	                	<li><a href="#Settings">Settings</a></li>
 			            <li class="dropdown">
 			              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 		                	<ul class="dropdown-menu">
@@ -155,48 +154,56 @@
 		            	<!-- Add to favorites/playlist button -->
 		            	<button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-star"></span></button>
 		            	<!-- Begin music control buttons -->
-		            	<div class="btn-group">
-  							<button id="previous" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-step-backward"></span></button>
- 							<button id="play" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-play"></span></button>
- 							<button id="pause" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-pause"></span></button>
- 							<button id="next" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-step-forward"></span></button>
- 							<!-- <button type="button" class="btn btn-default">Right</button> -->
+		            	<div class="btn-group btn-group-lg">
+  							<button id="previous" type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></span></button>
+ 							<button id="play" type="button" class="btn btn-default"><span class="glyphicon glyphicon-play"></span></button>
+ 							<button id="pause" type="button" class="btn btn-default"><span class="glyphicon glyphicon-pause"></span></button>
+ 							<button id="next" type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></span></button>
 						</div>
 		            	<!-- End music control buttons -->
+		            	<button id="settings" type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-cog"></span></button>
 		            </div>
 		        </div>
         	</div>
 		</nav>
 		<!-- End the fixed navigation bar at top -->
-		<div id="Playlists"></div>
-		<div id="Artists"></div>
-    	<div id="player">
-    		<audio id="audioplayer" controls autoplay>
-    			<source src="" type="audio/mpeg">
-    			No song selected yet.
-    		</audio>
-    	</div>
-		<div id="filelist" class="container">
-			<a href="demo.html">Video Test</a><br />
-			<p>Server IP Address: <?= $Server_IP ?></p>
-			<p>Your IP Address: <?= $Client_IP ?></p>
-			<br />
-		<?php
-			$files = glob(directory . "*");
-
-			//Code will need to be moved to inside the IP checking
-			?>
-			<div id="filelist" class="container">
-				<dt>List of files</dt>
-				<dl>
-			<?php
-				scan_dir(directory);
-			?>
-				</dl>
+		<!-- Begin main section of the page -->
+		<div class="container">
+			<div id="Playlists">
+				<p>Playlists Section</p>
 			</div>
+			<div id="Artists">
+				<p>Artists Section</p>
+			</div>
+	    	<div id="player">
+	    		<audio id="audioplayer" controls autoplay>
+	    			<source src="" type="audio/mpeg">
+	    			No song selected yet.
+	    		</audio>
+	    	</div>
+			<div id="filelist" class="container">
+				<a href="demo.html">Video Test</a><br />
+				<p>Server IP Address: <?= $Server_IP ?></p>
+				<p>Your IP Address: <?= $Client_IP ?></p>
+				<br />
 			<?php
+				$files = glob(directory . "*");
 
-		?>
+				//Code will need to be moved to inside the IP checking
+				?>
+				<div id="filelist" class="container">
+					<dt>List of files</dt>
+					<dl>
+				<?php
+					scan_dir(directory);
+				?>
+					</dl>
+				</div>
+				<?php
+
+			?>
+			</div>
 		</div>
+		<!-- End main section of the page -->
 	</body>
 </html>

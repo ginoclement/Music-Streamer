@@ -1,7 +1,19 @@
 "use strict";
 
 (function(){
-	
+	/*	
+		Gino Clement
+		Created: 4/28/2014
+		Last Modified: 4/28/2014
+
+		This file controls the audio player in the page.
+
+		Notes:
+			Need to add code to adjust button sizes
+			Add video player support in the future
+				Appear in middle of the page?
+
+	*/
 	window.onload = function (){
 		var songs = document.getElementsByTagName("dd");
 		for (var i = 0; i < songs.length; i++) {
