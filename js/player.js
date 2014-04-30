@@ -4,7 +4,6 @@
 	/*	
 		Gino Clement
 		Created: 4/28/2014
-		Last Modified: 4/28/2014
 
 		This file controls the audio player in the page.
 
@@ -12,8 +11,6 @@
 			Need to add code to adjust button sizes
 			Add video player support in the future
 				Appear in middle of the page?
-
-			play and pause song are not working because I need to add an event listener
 
 	*/
 	window.addEventListener("load", function (){
@@ -33,10 +30,8 @@
 	// This will change once I modify how songs are played/called
 	function songClick(event){
 		var playdiv = document.getElementById("player");
-		playdiv.innerHTML = '<audio id="audioplayer" controls autoplay><source src="' + event.target.innerHTML + '" type="audio/mpeg"></audio>';
-		// $("#audioplayer").bind("play", function(){
-		// 	alert("Play clicked");
-		// });
+		playdiv.innerHTML = '<audio id="audioplayer" controls><source src="' + event.target.innerHTML + '" type="audio/mpeg"></audio>';
+		playSong();
 	}
 
 	function nextSong(){
@@ -46,13 +41,13 @@
 	function pauseSong(event){
 		$("#pause").hide();
 		$("#play").show();
-		$("#audioplayer").pause();
+		$("#audioplayer").trigger("pause");
 	}
 
 	function playSong(event){
 		$("#play").hide();
 		$("#pause").show();
-		$("#audioplayer").play();
+		$("#audioplayer").trigger("play");
 	}
 
 	function previousSong(){

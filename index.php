@@ -50,9 +50,9 @@
 			}
 
 			//Working on IP checking later for now just calling a function
-			if($Client_IP != "192.168.1.1"){
-				die("This page cannot be viewed remotely");
-			}
+			// if($Client_IP != "192.168.1.1"){
+			// 	die("This page cannot be viewed remotely");
+			// }
 
 			/*
 			if($Client_IP == "192.168.1.1"){
