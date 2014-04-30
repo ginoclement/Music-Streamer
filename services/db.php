@@ -27,6 +27,12 @@
 	*Queries
 	*This section
 	************************************************************************************/
+	
+	//Returns an array of all albums and their artists
+	function getAlbums(){
+		$q = "SELECT AlbumName, Artist FROM Albums;";
+		return query($q);
+	}
 
 	//Gets albums for a given artist
 	function getAlbumsByArtist($artist){
@@ -40,12 +46,8 @@
 
 	//Returns an array of all artists
 	function getArtists(){
-		// $q = "SELECT DISTINCT ArtistName FROM Artist;";
-
-		$q = array("Metallica", "A Day To Remember", "All That Remains", "In This Moment", "Amaranthe");
-		sort($q);
-		return $q;
-		// return query($q);
+		$q = "SELECT DISTINCT ArtistName FROM Artist;";
+		return query($q);
 	}
 
 	//Returns an array of songs in a given album
@@ -53,7 +55,7 @@
 		$q = "SELECT SongName, Duration, NumberOfPlays
 				FROM Songs s
 				JOIN ArtistSongAlbumBridge b ON s.SongID=b.SongID
-				JOIN Album al on b.ArtistID=al.AlbumID
+				JOIN Albums al on b.ArtistID=al.AlbumID
 				WHERE al.AlbumName=$album\;";
 		return query($q);
 	}
