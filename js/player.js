@@ -13,6 +13,8 @@
 			Add video player support in the future
 				Appear in middle of the page?
 
+			play and pause song are not working because I need to add an event listener
+
 	*/
 	window.addEventListener("load", function (){
 		var songs = document.getElementsByTagName("dd");

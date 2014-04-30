@@ -16,6 +16,7 @@
 		$("ul.navbar-nav > li > a").click(navigate);
 
 		$("#Playlists").bind("click", showplaylist);
+		// $("#playlistviewer").mouseout(hideplaylist);
 		$("#newplaylist").bind("click", newplaylist);
 	});
 
@@ -23,9 +24,13 @@
 		alert("New playlist");
 	}
 
+	// function hideplaylist(){
+	// 	$("#playlistviewer").animate({left:"-250px"});
+	// }
+
 	function showplaylist(){
 		//Need want to make a modal display pop in from the left
-		var playlist = $("#playlist");
+		var playlist = $("#playlistviewer");
 		var navbar = $(".navbar-fixed-top");
 		playlist.css("height",$(window).height());
 		playlist.css("top",navbar.height());
@@ -41,7 +46,7 @@
 
 		//If some other link is clicked, hide the playlist
 		if(event.target.id != "Playlists"){
-			$("#playlist").animate({left:"-250px"})
+			$("#playlistviewer").animate({left:"-250px"});
 		}
 	}
 

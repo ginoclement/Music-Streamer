@@ -3,14 +3,14 @@ body {
   padding-bottom: 30px;
 }
 
-#playlist {
+#playlistviewer {
 	width: 250px;
 	position: fixed;
 	left: -250px;
-	/*border-top: solid black 2px;*/
+	border-top: solid black 2px;
 	border-right: solid black 2px;
 	/*border-bottom: solid black 2px;*/
-	border-radius: 15px;
+	border-radius: 10px;
 	background-color: white;
 }
 

@@ -169,10 +169,7 @@
 		</nav>
 		<!-- End the fixed navigation bar at top -->
 		<!-- Begin main section of the page -->
-		<div id="main" class="container">
-			<div id="Playlists">
-				<p>Playlists Section</p>
-			</div>
+		<div id="main" class="container"> 
 			<div id="Artists">
 				<p>Artists Section</p>
 			</div>
@@ -204,7 +201,7 @@
 			?>
 			</div>
 		</div>
-		<div id="playlist">
+		<div id="playlistviewer">
 			<div id="playlistoptions" class="btn-group btn-group-lg">
 				<button id="newplaylist" type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button>
 				<button id="play" type="button" class="btn btn-default"><span class="glyphicon glyphicon-play"></span></button>
