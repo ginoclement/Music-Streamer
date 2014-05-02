@@ -13,25 +13,43 @@
 				Appear in middle of the page?
 
 	*/
-	window.addEventListener("load", function (){
-		var songs = document.getElementsByTagName("dd");
-		for (var i = 0; i < songs.length; i++) {
-			songs[i].addEventListener("click", songClick);
-		};
-		$("#pause").hide();								//Hide pause button by default
+	
+	// Variables
+	// var source = $("#musicsource");
+	// var player = $("#audioplayer");
+	var playingnow = [];
 
+	window.addEventListener("load", function (){
+		//Bind all listed songs with a click function
+		$("dd").bind("click", songClick)
+
+
+
+		$("#pause").hide();								//Hide pause button by default
 		//Music player controls in nav bar
 		$("#next").bind("click", nextSong);				
 		$("#pause").bind("click", pauseSong);
 		$("#play").bind("click", playSong);
 		$("#previous").bind("click", previousSong);
+
+		var player = $("#audioplayer");
+		player.bind("ended", songOver);
+
 	});
 
 	// This will change once I modify how songs are played/called
 	function songClick(event){
-		var playdiv = document.getElementById("player");
-		playdiv.innerHTML = '<audio id="audioplayer" controls><source src="' + event.target.innerHTML + '" type="audio/mpeg"></audio>';
+		//Add song to the beginning of playingnow
+		playingnow.unshift(event.target.innerHTML);
+		//Set audio player source to that of the song
+		$("#musicsource").attr("src",event.target.innerHTML);
+		$("#audioplayer").trigger("load");
+		//Play song
 		playSong();
+	}
+
+	function songOver(){
+		alert("Song over");
 	}
 
 	function nextSong(){
@@ -47,6 +65,7 @@
 	function playSong(event){
 		$("#play").hide();
 		$("#pause").show();
+
 		$("#audioplayer").trigger("play");
 	}
 

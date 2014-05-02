@@ -24,15 +24,15 @@
 	*/
 
 	//Need to access the database
-	include("db.php");
+	// include("db.php");
 
 	if(isset($_GET["list"])){
-		header("Content-type: application/json");
+		// header("Content-type: application/json");
 
 		//Get the value of the list parameter
 		$list_ = $_GET["list"];
 
-		if($list_ = "album"){
+		if($list_ == "album"){
 			if(isset($_GET["artist"])){
 				//Only reply with albums by a specific artist
 				getAlbumsByArtist();
@@ -46,10 +46,10 @@
 
 			$q = array("Metallica", "A Day To Remember", "All That Remains", "In This Moment", "Amaranthe");
 			sort($q);
-			print json_encode(getArtists());
+			print json_encode($q);
 
 			// print json_encode(getArtists());
-		} else if($list_ = "songs"){
+		} else if($list_ == "songs"){
 
 		}
 	} else if(isset($_GET["render"])){

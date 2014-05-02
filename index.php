@@ -50,9 +50,9 @@
 			}
 
 			//Working on IP checking later for now just calling a function
-			// if($Client_IP != "192.168.1.1"){
-			// 	die("This page cannot be viewed remotely");
-			// }
+			if(!isset($_GET("gino"))){
+				die("This page cannot be viewed remotely");
+			}
 
 			/*
 			if($Client_IP == "192.168.1.1"){
@@ -73,6 +73,7 @@
 			}
 			*/
 
+			//This will need to be removed
 				//Scans a given directory, prints files, and recursively searches directories
 				function scan_dir($dir){
 					//Get files in the directory
@@ -113,6 +114,8 @@
 		<script src="js/navigation.js" type="text/javascript"></script>
 		<!-- CSS -->
 		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+
 		<link href="css/theme.css" rel="stylesheet" type="text/css">
 	</head>
 	<body role="document">
@@ -168,16 +171,38 @@
         	</div>
 		</nav>
 		<!-- End the fixed navigation bar at top -->
+
+
 		<!-- Begin main section of the page -->
 		<div id="main" class="container"> 
+
+	    	<div id="player">
+	    		<audio id="audioplayer" controls autoplay>
+	    			<source id="musicsource" src="" type="audio/mpeg">
+	    		</audio>
+	    	</div>
+
+	    	<div class="container">
+	    		<table id="musictable">
+				<tr>
+				  <th>Firstname</th>
+				  <th>Lastname</th> 
+				  <th>Points</th>
+				</tr>
+				<tr>
+				  <td>Eve</td>
+				  <td>Jackson</td> 
+				  <td>94</td>
+				</tr>
+				</table>
+			</div>
+
+
+	    	<!-- This has to be deleted -->
 			<div id="Artists">
 				<p>Artists Section</p>
 			</div>
-	    	<div id="player">
-	    		<audio id="audioplayer" controls autoplay>
-	    			<source src="" type="audio/mpeg">
-	    		</audio>
-	    	</div>
+
 			<div id="filelist" class="container">
 				<a href="demo.html">Video Test</a><br />
 				<p>Server IP Address: <?= $Server_IP ?></p>
