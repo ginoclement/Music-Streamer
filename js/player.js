@@ -39,21 +39,39 @@
 
 	// This will change once I modify how songs are played/called
 	function songClick(event){
-		//Add song to the beginning of playingnow
-		playingnow.unshift(event.target.innerHTML);
-		//Set audio player source to that of the song
-		$("#musicsource").attr("src",event.target.innerHTML);
-		$("#audioplayer").trigger("load");
-		//Play song
-		playSong();
+		//Add song to playlist
+		playingnow.push(event.target.innerHTML);
+		//If there is no song loaded
+
+		if($("#musicsource").attr("src") == ""){
+			//Load and play song\
+			nextSong()
+		}
+
+
+
+		// //Add song to the beginning of playingnow
+		// playingnow.unshift(event.target.innerHTML);
+		// //Set audio player source to that of the song
+		// $("#musicsource").attr("src",event.target.innerHTML);
+		// $("#audioplayer").trigger("load");
+		// //Play song
+		// playSong();
 	}
 
 	function songOver(){
-		alert("Song over");
+		nextSong();
 	}
 
 	function nextSong(){
-		alert("Next song not implemented yet.");
+		if(playingnow.length != 0){
+			//Load next song
+			$("#musicsource").attr("src",playingnow.shift(event.target.innerHTML));
+			$("#audioplayer").trigger("load");
+			//Start playing next song
+			// playSong();
+		}
+
 	}
 
 	function pauseSong(event){
@@ -65,7 +83,6 @@
 	function playSong(event){
 		$("#play").hide();
 		$("#pause").show();
-
 		$("#audioplayer").trigger("play");
 	}
 

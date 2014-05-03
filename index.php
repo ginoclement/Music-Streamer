@@ -50,7 +50,7 @@
 			}
 
 			//Working on IP checking later for now just calling a function
-			if(!isset($_GET("gino"))){
+			if(!isset($_GET["gino"])){
 				die("This page cannot be viewed remotely");
 			}
 
@@ -183,7 +183,7 @@
 	    	</div>
 
 	    	<div class="container">
-	    		<table id="musictable">
+	    		<table id="musictable" class="table">
 				<tr>
 				  <th>Firstname</th>
 				  <th>Lastname</th> 
@@ -199,8 +199,8 @@
 
 
 	    	<!-- This has to be deleted -->
-			<div id="Artists">
-				<p>Artists Section</p>
+			<div id="Temp">
+				<p>Right now you need to click songs to add them to the playlist, then click next in order to start them playing</p>
 			</div>
 
 			<div id="filelist" class="container">
