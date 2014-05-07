@@ -1,0 +1,66 @@
+Artists
+	artistID	PK
+	artistName
+
+Albums
+	albumID		PK
+	name
+	year
+	label
+	artlocation
+
+AlbumArtistBridge
+	artistID	FK
+	albumID		FK
+
+Genres
+	genreID		FK
+	genreName
+
+Songs
+	songID		PK
+	songName
+	genreID		FK
+	duration
+	location
+	fileType
+
+AlbumSongBridge
+	albumID		FK
+	songID		FK
+
+SongStats
+	songID		FK
+	rating
+	numPlays
+	lastPlayed
+	dateAdded
+
+PlaylistNames
+	playlistID	PK
+	playlistName
+
+Playlists
+	playlistID	FK
+	songID		FK
+
+Videos
+	videoID		PK
+	name
+	duration
+	location
+	fileType
+
+
+
+============================================================
+Different Database?
+
+Users
+	userID		PK
+	username
+	Password
+	Email
+	First Name
+	Last Name
+
