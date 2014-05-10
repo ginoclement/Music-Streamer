@@ -60,13 +60,15 @@
 	}
 
 	function songOver(){
-		nextSong();
+		//If there are more songs
+			nextSong();
+		//Else pause idon
 	}
 
 	function nextSong(){
 		if(playingnow.length != 0){
 			//Load next song
-			$("#musicsource").attr("src",playingnow.shift(event.target.innerHTML));
+			$("#musicsource").attr("src",playingnow.shift());
 			$("#audioplayer").trigger("load");
 			//Start playing next song
 			// playSong();

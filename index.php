@@ -175,25 +175,40 @@
 
 		<!-- Begin main section of the page -->
 		<div id="main" class="container"> 
+			<!-- Debug information -->
+			<?php
+				if(isset($_GET["debug"])){ ?>
+					<p>Server IP Address: <?= $Server_IP ?></p>
+					<p>Your IP Address: <?= $Client_IP ?></p>
+				<?php }
+			?>
 
 	    	<div id="player">
 	    		<audio id="audioplayer" controls autoplay>
 	    			<source id="musicsource" src="" type="audio/mpeg">
 	    		</audio>
 	    	</div>
-
+	    	<!-- Music table -->
 	    	<div class="container">
 	    		<table id="musictable" class="table">
-				<tr>
-				  <th>Firstname</th>
-				  <th>Lastname</th> 
-				  <th>Points</th>
-				</tr>
-				<tr>
-				  <td>Eve</td>
-				  <td>Jackson</td> 
-				  <td>94</td>
-				</tr>
+	    			<!-- Table headers -->
+					<tr>
+					  <th>Name</th>
+					  <th>Artist</th> 
+					  <th>Album</th>
+					  <th>Rating</th>
+					  <th>Genre</th>
+					  <th>Plays</th>
+					</tr>
+					<!-- Table rows start here -->
+					<tr>
+					  <td>Song Example</td>
+					  <td>Artist Example</td>
+					  <td>Album Example</td>
+					  <td>*****</td>
+					  <td>Genre Example</td>
+					  <td>123</td>
+					</tr>
 				</table>
 			</div>
 
@@ -204,10 +219,6 @@
 			</div>
 
 			<div id="filelist" class="container">
-				<a href="demo.html">Video Test</a><br />
-				<p>Server IP Address: <?= $Server_IP ?></p>
-				<p>Your IP Address: <?= $Client_IP ?></p>
-				<br />
 			<?php
 				$files = glob(directory . "*");
 
